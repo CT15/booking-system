@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  desk_id: 
+  time_id: 
+  user_id: 
+
+two:
+  desk_id: 
+  time_id: 
+  user_id: 
