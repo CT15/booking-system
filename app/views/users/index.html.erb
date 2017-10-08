@@ -1,0 +1,22 @@
+<h1>Booking System</h1>
+
+<h2>Table of Users</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Full Name</th>
+            <th>E-mail</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @users.each do |user| %>
+            <tr>
+                <td><%= user.id %></td>
+                <td><%= user.full_name %></td>
+                <td><%= user.email %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+        
