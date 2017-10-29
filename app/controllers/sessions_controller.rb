@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
     end
 
     def delete #sign-out
-        session[:full_name] = nil
+        session.delete(:full_name)
         redirect_to users.path
     end
 end
