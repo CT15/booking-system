@@ -1,4 +1,4 @@
-<h1>Create Users</h1>
+<h1>Hi, <%= session[:full_name] || 'Guest'%></h1>
 <%= form_for @user do |f| %>
     <p>
         <%= f.label :full_name %>
@@ -10,9 +10,12 @@
     </p>
     <p>
         <%= f.label :password %>
-        <%= f.text_field :password %>
+        <%= f.password_field :password %>
     </p>
     
     <%= f.submit 'Create' %>
 <% end %>
+
+<%= form_tag do %>
+
 

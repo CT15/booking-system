@@ -1,4 +1,4 @@
-<h1>Booking System</h1>
+<h1>Hi, <%= session[:full_name] || 'Guest'%></h1>
 
 <h2>Table of Users</h2>
 <table>
@@ -7,6 +7,8 @@
             <th>Id</th>
             <th>Full Name</th>
             <th>E-mail</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -15,6 +17,8 @@
                 <td><%= user.id %></td>
                 <td><%= user.full_name %></td>
                 <td><%= user.email %></td>
+                <td><%= link_to 'Edit', edit_user_path(id: user.id) %></td>
+                <td><%= link_to 'Delete', user_path(id: user.id), method: :delete %></td>
             </tr>
         <% end %>
     </tbody>

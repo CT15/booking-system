@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170925053225) do
+ActiveRecord::Schema.define(version: 20171029065658) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "desks", force: :cascade do |t|
     t.integer "number"
@@ -19,9 +22,9 @@ ActiveRecord::Schema.define(version: 20170925053225) do
   end
 
   create_table "schedules", force: :cascade do |t|
-    t.integer "desk_id_id"
-    t.integer "time_id_id"
-    t.integer "user_id_id"
+    t.bigint "desk_id_id"
+    t.bigint "time_id_id"
+    t.bigint "user_id_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["desk_id_id"], name: "index_schedules_on_desk_id_id"
@@ -39,9 +42,9 @@ ActiveRecord::Schema.define(version: 20170925053225) do
   create_table "users", force: :cascade do |t|
     t.string "full_name"
     t.string "email"
-    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "hashed_password"
   end
 
 end
